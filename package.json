@@ -1,0 +1,57 @@
+{
+  "name": "pf-react-style",
+  "displayName": "pf-react-style",
+  "description": "",
+  "version": "0.0.4",
+  "publisher": "redhat",
+  "engines": {
+    "vscode": "^1.23.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onLanguage:typescript",
+    "onLanguage:javascript"
+  ],
+  "main": "./out/extension",
+  "contributes": {
+    "configuration": {
+      "type": "object",
+      "title": "CSS Modules Configuration",
+      "properties": {
+        "pfReactStyles.test": {
+          "type": [
+            "boolean",
+            "string"
+          ],
+          "default": false,
+          "description": "Transform classnames in autocomplete suggestions."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "postinstall": "node ./node_modules/vscode/bin/install",
+    "test": "npm run compile && node ./node_modules/vscode/bin/test"
+  },
+  "devDependencies": {
+    "@types/camelcase": "^4.1.0",
+    "@types/mocha": "^2.2.42",
+    "@types/node": "^7.0.43",
+    "@types/resolve-from": "^0.0.18",
+    "tslint": "^5.8.0",
+    "typescript": "^2.6.1",
+    "vscode": "^1.1.6"
+  },
+  "dependencies": {
+    "@patternfly/react-styles": "^2.0.1",
+    "@types/camelcase": "^4.1.0",
+    "@types/resolve-from": "^0.0.18",
+    "camelcase": "^5.0.0",
+    "resolve-from": "^4.0.0"
+  }
+}
